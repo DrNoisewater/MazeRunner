@@ -1,0 +1,35 @@
+<UserControl x:Class="MazeRunner.Views.CompareView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="12" /><RowDefinition Height="*" /></Grid.RowDefinitions>
+        <Border Style="{StaticResource CardStyle}">
+            <Grid>
+                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock Text="ALGORITHM COMPARISON" Style="{StaticResource EyebrowTextStyle}" />
+                    <TextBlock Margin="0,6,0,0" Text="Benchmark two solvers against the current maze" Style="{StaticResource HeadingTextStyle}" />
+                    <TextBlock x:Name="MazeStatusLabel" Margin="0,4,0,0" Text="Generate a maze in the Visualizer first." Style="{StaticResource BodyTextStyle}" />
+                </StackPanel>
+                <Button Grid.Column="1" Content="Run comparison" Style="{StaticResource PrimaryButtonStyle}" VerticalAlignment="Center" Click="RunComparisonButton_Click" />
+            </Grid>
+        </Border>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="12" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="SOLVER A" Style="{StaticResource EyebrowTextStyle}" />
+                    <ComboBox x:Name="SolverAComboBox" Margin="0,9,0,0" Style="{StaticResource ModernComboBoxStyle}" />
+                    <TextBlock x:Name="SolverAResultLabel" Margin="0,18,0,0" Text="No comparison run yet." Foreground="{DynamicResource TextSecondaryBrush}" FontFamily="Consolas" FontSize="13" LineHeight="25" />
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="2" Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="SOLVER B" Style="{StaticResource EyebrowTextStyle}" />
+                    <ComboBox x:Name="SolverBComboBox" Margin="0,9,0,0" Style="{StaticResource ModernComboBoxStyle}" />
+                    <TextBlock x:Name="SolverBResultLabel" Margin="0,18,0,0" Text="No comparison run yet." Foreground="{DynamicResource TextSecondaryBrush}" FontFamily="Consolas" FontSize="13" LineHeight="25" />
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>
